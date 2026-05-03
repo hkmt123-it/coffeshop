@@ -1,11 +1,136 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="az">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>NOIR — Specialty Coffee</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;1,400&family=Jost:wght@200;300;400&display=swap"
+        rel="stylesheet">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
 </head>
-<body>
-    
+
+<body class="bg-stone-950 text-stone-100 font-['Jost']">
+
+    <header>
+        <nav
+            class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 py-5 bg-stone-950/90 backdrop-blur-sm border-b border-stone-800">
+            <div class="font-['Cormorant_Garamond'] text-2xl tracking-widest text-amber-400">
+                NOIR
+            </div>
+            <ul class="hidden md:flex gap-10 text-xs tracking-widest uppercase text-stone-400">
+                <li><a href="#hot" class="hover:text-amber-400 transition-colors duration-300">Kəşfet</a></li>
+                <li><a href="#about" class="hover:text-amber-400 transition-colors duration-300">Haqqında</a></li>
+                <li><a href="#reviews" class="hover:text-amber-400 transition-colors duration-300">Rəylər</a></li>
+                <li><a href="#contact" class="hover:text-amber-400 transition-colors duration-300">Əlaqə</a></li>
+            </ul>
+            <div class="flex items-center gap-4">
+                <button id="langBtn" type="button"
+                    class="text-xs tracking-widest text-stone-400 border border-stone-700 px-4 py-2 hover:border-amber-400 hover:text-amber-400 transition-all duration-300">
+                    EN
+                </button>
+                <button aria-label="Menyunu aç" id="hamburgerBtn" type="button"
+                    class="md:hidden flex flex-col gap-1.5 p-2">
+                    <span class="block w-6 h-px bg-stone-400"></span>
+                    <span class="block w-6 h-px bg-stone-400"></span>
+                    <span class="block w-6 h-px bg-stone-400"></span>
+                </button>
+            </div>
+        </nav>
+
+        <!-- MOBİL MENYU -->
+        <div id="mobileMenu"
+            class="hidden fixed top-16 left-0 right-0 z-40 bg-stone-950/95 backdrop-blur-sm border-b border-stone-800 px-8 py-6 md:hidden">
+            <ul class="flex flex-col gap-6 text-xs tracking-widest uppercase text-stone-400">
+                <li><a href="#hot" class="hover:text-amber-400 transition-colors duration-300">Kəşfet</a></li>
+                <li><a href="#about" class="hover:text-amber-400 transition-colors duration-300">Haqqında</a></li>
+                <li><a href="#reviews" class="hover:text-amber-400 transition-colors duration-300">Rəylər</a></li>
+                <li><a href="#contact" class="hover:text-amber-400 transition-colors duration-300">Əlaqə</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-6">
+
+        <!-- HERO -->
+        <section id="hero"
+            class="min-h-screen flex flex-col items-center justify-center text-center px-6 pt-20 relative overflow-hidden">
+            <div
+                class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(180,120,40,0.08)_0%,_transparent_70%)] pointer-events-none">
+            </div>
+            <p class="text-amber-400 text-xs tracking-[6px] uppercase mb-6">
+                Specialty Coffee · Bakı
+            </p>
+            <h1 class="font-['Cormorant_Garamond'] text-7xl md:text-9xl font-light tracking-[12px] text-stone-100 mb-6">
+                NOIR
+            </h1>
+            <div class="w-16 h-px bg-amber-400 mb-6"></div>
+            <p class="text-stone-400 text-sm tracking-widest font-light max-w-md mb-12">
+                Hər damcıda bir hekayə
+            </p>
+            <a href="#mehsullar"
+                class="text-xs tracking-[4px] uppercase border border-amber-400 text-amber-400 px-8 py-4 hover:bg-amber-400 hover:text-stone-950 transition-all duration-500">
+                Başla
+            </a>
+        </section>
+        <h2 id="mehsullar" class="text-center font-['Cormorant_Garamond'] text-6xl font-light tracking-widest text-stone-100 mb-4 scroll-mt-24">Mehsullarimiz</h2>
+        <!-- MENYU BÖLMƏLƏRİ -->
+        <div class="flex flex-col gap-24 py-24">
+
+            <!-- İSTİ İÇKİLƏR -->
+            <section id="hot" class="flex flex-col gap-8">
+                <div>
+                    <h2 class="font-['Cormorant_Garamond'] text-4xl font-light tracking-widest text-stone-100 mb-4">İsti
+                        İçkilər</h2>
+                    <div class="w-16 h-px bg-amber-400"></div>
+                </div>
+                <div id="hotGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+            </section>
+
+            <!-- SOYUQ İÇKİLƏR -->
+            <section id="ice" class="flex flex-col gap-8">
+                <div>
+                    <h2 class="font-['Cormorant_Garamond'] text-4xl font-light tracking-widest text-stone-100 mb-4">
+                        Soyuq İçkilər</h2>
+                    <div class="w-16 h-px bg-amber-400"></div>
+                </div>
+                <div id="iceGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+            </section>
+
+            <!-- DESERTLƏR -->
+            <section id="dessert" class="flex flex-col gap-8">
+                <div>
+                    <h2 class="font-['Cormorant_Garamond'] text-4xl font-light tracking-widest text-stone-100 mb-4">
+                        Desertlər</h2>
+                    <div class="w-16 h-px bg-amber-400"></div>
+                </div>
+                <div id="dessertGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+            </section>
+
+            <!-- Specials -->
+            <section id="special" class="flex flex-col gap-8">
+                <div>
+                    <h2 class="font-['Cormorant_Garamond'] text-4xl font-light tracking-widest text-stone-100 mb-4">
+                        Xususiler</h2>
+                    <div class="w-16 h-px bg-amber-400"></div>
+                </div>
+                <div id="specialGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+            </section>
+        </div>
+
+    </main>
+
+    <footer></footer>
+
+    <script src="main.js"></script>
 </body>
+
 </html>
